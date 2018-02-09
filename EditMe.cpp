@@ -23,9 +23,9 @@ namespace CppLondon {
 		unique_ptr(unique_ptr&& original) : ptr(original.ptr) {
 			original.ptr = nullptr;
 		}
-		unique_ptr& operator=(unique_ptr&& original) {
-			this->ptr = original.ptr;
-			original.ptr = nullptr;
+		unique_ptr& operator=(unique_ptr&& rhs) {
+			this->ptr = rhs.ptr;
+			rhs.ptr = nullptr;
 			return *this;
 		}
 
